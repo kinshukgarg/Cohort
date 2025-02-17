@@ -16,7 +16,7 @@ exports.createTodo = async (req, res) => {
     }
     const newTodo = new Todo({ title, user: userId });
     const saveTodo = await newTodo.save();
-    return res.status(210).json({ saveTodo });
+    return res.status(201).json({ saveTodo });
   } catch (err) {
     console.error("create Todo error", err);
     return res.status(500).json({ error: "Servor error" });
